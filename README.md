@@ -1,16 +1,7 @@
-# mealsapp
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- (#151) using grid view
+- (#152) widgets vs scrren
+  - (#152)-1 define category model
+  - (#152)-2 define dummy data
+  - (#152)-3 single widget item for showing grid tile data
+  - (#152)-4 looping List dummy data
+- (#153) makeing any widget tapabale
