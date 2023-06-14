@@ -5,3 +5,13 @@
   - (#152)-3 single widget item for showing grid tile data
   - (#152)-4 looping List dummy data
 - (#154) makeing any widget tapabale
+- (#155) - adding meals data
+  - (#155)-1 create meal model
+  - (#155)-2 meals screen
+  - (#155)-3 meals dummy data
+- (#157) adding cross screen navigation
+  - (#157)-1 creating method for selecting category
+- (#158) - passing data into target screen (using where and contains filtering the data)
+- (#159) - introducing the stack widget
+  - (#159)-1 created widget for meal single item
+  - (#159)-2 added kTransparentImage as dummy placeholder loading image

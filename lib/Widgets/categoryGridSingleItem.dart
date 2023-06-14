@@ -5,14 +5,19 @@ import 'package:mealsapp/Models/modelCategory.dart';
 // (#152)-3
 class CategoryGridSingleItem extends StatelessWidget {
   final Category SingleCategoryItem;
+  final void Function() onSelectCategory;
 
   const CategoryGridSingleItem({
-    required this.SingleCategoryItem
+    required this.SingleCategoryItem,
+    required this.onSelectCategory
   });
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){},
+      onTap: (){
+        onSelectCategory();
+      },
       splashColor: Theme.of(context).primaryColor,
       borderRadius:BorderRadius.circular(16),
       child: Container(
