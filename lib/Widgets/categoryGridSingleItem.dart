@@ -12,9 +12,13 @@ class CategoryGridSingleItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: (){},
+      splashColor: Theme.of(context).primaryColor,
+      borderRadius:BorderRadius.circular(16),
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration:BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
             gradient: LinearGradient(
                 colors: [
                   SingleCategoryItem.color.withOpacity(0.55),
@@ -26,7 +30,8 @@ class CategoryGridSingleItem extends StatelessWidget {
         ),
         child: Text(SingleCategoryItem.title,
           style:TextStyle(
-            color: Colors.white70
+            color: Colors.white70,
+            fontSize: 15
           )
         ),
       ),

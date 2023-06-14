@@ -4,4 +4,4 @@
   - (#152)-2 define dummy data
   - (#152)-3 single widget item for showing grid tile data
   - (#152)-4 looping List dummy data
-- (#153) makeing any widget tapabale
+- (#154) makeing any widget tapabale
