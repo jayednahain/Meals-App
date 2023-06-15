@@ -15,3 +15,8 @@
 - (#159) - introducing the stack widget
   - (#159)-1 created widget for meal single item
   - (#159)-2 added kTransparentImage as dummy placeholder loading image
+- (#160)*** - improving meal item widget
+  - (#160)-1 create MealItemTrait class
+  - (#160)-2 MealItemTrait used in mealSingle item to show a single meal meta data
+  - (#160)-3 created two method for extract string 1st letter into upper case
+  
