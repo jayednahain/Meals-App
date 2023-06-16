@@ -19,4 +19,5 @@
   - (#160)-1 create MealItemTrait class
   - (#160)-2 MealItemTrait used in mealSingle item to show a single meal meta data
   - (#160)-3 created two method for extract string 1st letter into upper case
-  
+- (#161) - adding navigation to the meal details screen
+- (#162) - improving the meal detail screen (started)
