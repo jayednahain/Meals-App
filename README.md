@@ -21,3 +21,9 @@
   - (#160)-3 created two method for extract string 1st letter into upper case
 - (#161) - adding navigation to the meal details screen
 - (#162) - improving the meal detail screen (started)
+- (#163) - adding tab based navigation
+  - (#163)-1 - this method will get page index
+  - (#163)-2 - for reuse using existing CategoriesScreen() and MealsScreen()
+    - this meal screen will only show the favorite item
+      - after navigation though tabBar 
+  - (#163)-3 *** title was required. if title is null its mean we using MealsScreen() direct from tab bar
