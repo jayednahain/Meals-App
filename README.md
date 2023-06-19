@@ -27,3 +27,10 @@
     - this meal screen will only show the favorite item
       - after navigation though tabBar 
   - (#163)-3 *** title was required. if title is null its mean we using MealsScreen() direct from tab bar
+- (#164) - favorite meal functionality
+  - (#164)-1 adding button to meal detail screen
+  - (#164)-2 function will run after pressing the favorite button
+    - isExisting is checking if a single meal object is favorite or not
+    - this function will send to meal detail screen 
+      - tabScreen(onToggleFavorite) -> MealsScreen(onToggleFavorite:_toggleMealFavoriteStatus ) -> MealDetailsScreen(onToggleFavorite)
+  - 
