@@ -44,4 +44,6 @@
 -(#167)- sending a callback function tabScreen -> drawer for routing after tab item press
   - (#167)-1 created function which will select screen
     - finding which drawer item is selected
-- (#168) - 
+- (#168) - adding filter items
+  - here only showing the gluten free item
+- (#169)- 
