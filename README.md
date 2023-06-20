@@ -33,4 +33,10 @@
     - isExisting is checking if a single meal object is favorite or not
     - this function will send to meal detail screen 
       - tabScreen(onToggleFavorite) -> MealsScreen(onToggleFavorite:_toggleMealFavoriteStatus ) -> MealDetailsScreen(onToggleFavorite)
+- (#165) - managing App-wide state data
+  - (#165)-1 fixing problem using set state
+    - if we add item in favorite and remove from meal detail screen we cant see any update
+    - so here we are using set state for updating data in UI
+  - (#165)-2 showing info message when we update the meal
   - 
+- 

@@ -14,6 +14,14 @@ class TabScreen extends StatefulWidget {
 
 class _TabScreenState extends State<TabScreen> {
   int _selectedPageIndex =0;
+  
+  void _showInfoMessage(String message){
+    //accessing globally avalable context
+    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message))
+    );
+  }
 
   //(#163)-1
   void _selectPage(int index){
@@ -24,14 +32,21 @@ class _TabScreenState extends State<TabScreen> {
 
   final List<Meal> _favoriteMeals = [];
 
-
   void _toggleMealFavoriteStatus(Meal meal){
     final isExisting = _favoriteMeals.contains(meal);
     if(isExisting){
-      _favoriteMeals.remove(meal);
+      //(#165)-1
+      setState(() {
+        _favoriteMeals.remove(meal);
+      });
+      _showInfoMessage("Meal remove from favorite");
     }
     else{
-      _favoriteMeals.add(meal);
+      //(#165)-1
+      setState(() {
+        _favoriteMeals.add(meal);
+        _showInfoMessage("Meal added to favorite");
+      });
     }
   }
 
@@ -44,7 +59,10 @@ class _TabScreenState extends State<TabScreen> {
     );
     String activePageTitle ="Categories";
     if(_selectedPageIndex ==1){
-      activePage = MealsScreen(meals: [],onToggleFavorite: _toggleMealFavoriteStatus,);
+      activePage = MealsScreen(
+        meals: _favoriteMeals,
+        onToggleFavorite: _toggleMealFavoriteStatus
+      );
       activePageTitle ="Your Favorite Items";
     }
 
