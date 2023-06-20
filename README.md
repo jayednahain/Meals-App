@@ -38,6 +38,10 @@
     - if we add item in favorite and remove from meal detail screen we cant see any update
     - so here we are using set state for updating data in UI
   - (#165)-2 showing info message when we update the meal
-  - 
 - (#166) - adding side drawer
   - (#166)-1 creating a drawer widget
+  - (#166)-2 single drawer item separated
+-(#167)- sending a callback function tabScreen -> drawer for routing after tab item press
+  - (#167)-1 created function which will select screen
+    - finding which drawer item is selected
+- 

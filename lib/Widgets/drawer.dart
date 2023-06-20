@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:mealsapp/Widgets/singleDrawerItem.dart';
 //(#166)-1
 class MainDrawer extends StatelessWidget {
-  const MainDrawer({super.key});
-
+  const MainDrawer({super.key,required this.onSelectScreen});
+  final void Function(String identifier) onSelectScreen;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -38,13 +38,17 @@ class MainDrawer extends StatelessWidget {
               itemIcon: Icons.restaurant,
               title: 'Meals',
               onTapItem: (){
-                print("___PRESS___!");
+                print("___PRESS_ meals__!");
+                onSelectScreen('meals');
               }
           ),
           SingleDrawerItem(
               itemIcon: Icons.settings,
               title: 'Filter',
-              onTapItem: (){}
+              onTapItem: (){
+                print("___PRESS_ filters__!");
+                onSelectScreen('filters');
+              }
           ),
         ],
       ),
