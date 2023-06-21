@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mealsapp/Data/dummyData.dart';
 import 'package:mealsapp/Screen/categoriesScreen.dart';
 import 'package:mealsapp/Screen/filterScreen.dart';
 import 'package:mealsapp/Screen/mealsScreen.dart';
@@ -67,7 +68,7 @@ class _TabScreenState extends State<TabScreen> {
     if(identifier=='filters'){
       // (#169)-1
       final result = await Navigator.of(context).push(
-        MaterialPageRoute(builder: (ctx)=> const FilterScreen())
+        MaterialPageRoute(builder: (ctx)=> FilterScreen(currentFilters: _selectedFilters))
       );
       print(result);
 
@@ -84,9 +85,32 @@ class _TabScreenState extends State<TabScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    //(#173)-4
+    final availableMeals = dummyMeals.where((meal){
+      if(_selectedFilters[Filter.glutenFree]! && !meal.isGlutenFree){
+        return false;
+      }
+      if (_selectedFilters[Filter.lactoseFree]! && !meal.isLactoseFree){
+        return false;
+      }
+      if (_selectedFilters[Filter.vegetarian]! && !meal.isVegetarian){
+        return false;
+      }
+      if (_selectedFilters[Filter.vegan]! && !meal.isVegan){
+        return false;
+      }
+      return true;
+    }).toList();
+    void testFun(Meal meal){}
+
+
+
     //(#163)-2
     Widget activePage = CategoriesScreen(
-      onToggleFavorite:_toggleMealFavoriteStatus ,
+      availableMeals: availableMeals,
+      onToggleFavorite:testFun
+      // _toggleMealFavoriteStatus ,
     );
     String activePageTitle ="Categories";
     if(_selectedPageIndex ==1){

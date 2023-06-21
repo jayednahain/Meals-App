@@ -65,10 +65,15 @@
       - we can receive values while pop()
     - so here we dont want to get value imedieactly  
 
-- (#173) - Applying filters :
+- (#173) *** - Applying filters :
   - (#173)-1 define filters item globally
   - (#173)-2 update local filter with poping item.
-
+  - (#173)-3 here we are trying to
+    - from tab-> filter(initilize filter switchs)->tab again -> then meal screen
+  - (#173)-4 so we need to import our dummy data from tab screen
+  - (#173)-5 now we are sending data to category screen . before that we were using direct meal dummy data;
+    - 
+  
 ------
 (#151) Using grid view
 (#152) Widgets vs screen
