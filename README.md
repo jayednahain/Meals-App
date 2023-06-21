@@ -52,12 +52,22 @@
     - after navigate from Drawer into filter screen if we click on arrow back button
       - we are having the Drawer which is still open
         - so before navigate we are pop()  drawer`
-- (#170) - started
+- (#170) - adding more filter options
+- (#171) - return data when leaving the screen
+  - after select filter . we expecting show data according to filter options
+    - (#171)-1 using WillPopScope
+    - (#171)-2 we are sending the data backward. when we leaving the screen
+    - (#171)-3 this return will decide we are leaving the screen or not
+      - we are already navigating so here we returning false
+- (#172) - rendering using returned filtered data
+  - So we are navigating tabScreen() to filtered() screen
+    - if navigate back to filtered() to tabScreen() using pop()
+      - we can receive values while pop()
+    - so here we dont want to get value imedieactly  
 
-
-
-
-
+- (#173) - Applying filters :
+  - (#173)-1 define filters item globally
+  - (#173)-2 update local filter with poping item.
 
 ------
 (#151) Using grid view

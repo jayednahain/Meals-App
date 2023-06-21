@@ -6,17 +6,26 @@ import 'package:mealsapp/Widgets/drawer.dart';
 
 import '../Models/modelMeal.dart';
 
+//(#173)-1
+const kInitalFilters ={
+  Filter.glutenFree:false,
+  Filter.lactoseFree:false,
+  Filter.vegetarian:false,
+  Filter.vegan:false
+};
+
 class TabScreen extends StatefulWidget {
   const TabScreen({Key? key}) : super(key: key);
-
-
   @override
   State<TabScreen> createState() => _TabScreenState();
 }
 
 class _TabScreenState extends State<TabScreen> {
   int _selectedPageIndex =0;
-  
+  final List<Meal> _favoriteMeals = [];
+
+  Map<Filter,bool> _selectedFilters = kInitalFilters;
+
   void _showInfoMessage(String message){
     //accessing globally avalable context
     ScaffoldMessenger.of(context).clearSnackBars();
@@ -32,7 +41,6 @@ class _TabScreenState extends State<TabScreen> {
     });
   }
 
-  final List<Meal> _favoriteMeals = [];
 
   void _toggleMealFavoriteStatus(Meal meal){
     final isExisting = _favoriteMeals.contains(meal);
@@ -53,14 +61,21 @@ class _TabScreenState extends State<TabScreen> {
   }
 
   //(#167)-1
-  void _setScreen(String identifier){
+  void _setScreen(String identifier) async{
     //(#169)-2
-    Navigator.of(context).pop();
+     Navigator.of(context).pop();
     if(identifier=='filters'){
       // (#169)-1
-      Navigator.of(context).push(
+      final result = await Navigator.of(context).push(
         MaterialPageRoute(builder: (ctx)=> const FilterScreen())
       );
+      print(result);
+
+      //(#173)-2
+      setState(() {
+        _selectedFilters= result ?? kInitalFilters;
+      });
+
     }
     else {
       Navigator.of(context).pop();
@@ -69,7 +84,6 @@ class _TabScreenState extends State<TabScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     //(#163)-2
     Widget activePage = CategoriesScreen(
       onToggleFavorite:_toggleMealFavoriteStatus ,
